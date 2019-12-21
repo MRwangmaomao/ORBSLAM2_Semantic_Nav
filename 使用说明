@@ -1,0 +1,3 @@
+./rgbd_tum ../../Vocabulary/ORBvoc.txt ./TUM1.yaml ../../../../../dataset/rgbd_dataset_freiburg1_room/ ../../../../../dataset/rgbd_dataset_freiburg1_room/associate.txt 
+
+./rgbd_tum ../../Vocabulary/ORBvoc.txt ./TUM1.yaml ../../../../../dataset/rgbd_dataset_freiburg1_desk/ ../../../../../dataset/rgbd_dataset_freiburg1_desk/associate.txt 

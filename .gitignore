@@ -1,0 +1,17 @@
+cmake-build-debug/
+Examples/
+build/
+lib/
+log/
+Thirdparty/
+Vocabulary/
+.idea/
+Examples/RGB-D/rgbd_tum
+Examples/RGB-D/KeyFrameTrajectory.txt
+Examples/RGB-D/CameraTrajectory.txt
+Examples/RGB-D/octomap.ot
+Thirdparty/DBoW2/lib/
+Thirdparty/DBoW2/g2o/
+Thirdparty/ncnn/build/
+
+

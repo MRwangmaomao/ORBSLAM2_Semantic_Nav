@@ -1,0 +1,31 @@
+
+1. 在perfect下安装
+mkdir build
+cd build
+cmake ..
+make
+
+2.第三方库文件夹
+
+BDow2和g2o库采用现有的
+
+目标检测是使用腾讯的ncnn库运行的。使用ncnn动态链接库编译，独立运行。ncnn/include 头文件目录 ncnn/lib 库文件libncnn.a，在ncnn源码下 sudo make install 产生。将编译好的 libncnn.a 放在 usr/lib下。
+将ncnn的build下的include文件夹放到ncnn文件夹路径。
+
+3. 相关库的安装
+opencv 3.4  版本2尝试过存在问题，后面换用版本3
+
+pcl 1.7  
+sudo apt-get install libpcl-dev
+
+vtk
+sudo apt-get install libvtk5-dev
+
+中途如果遇到问题，参考如下方法：
+vtk6以上 我发现是perfect/include/Tracking.h引用了Flow.h导致的，会使vtkAtomic报错，解决方法是：去掉Flow.h中的using namespace cv; 然后把Tracking.cc 中1381行的 RANSAC改为cv::RANSAC，最后把Flow.cc中报错的前面加上cv::
+
+
+orb词典的错，请用该链接https://github.com/Jing-lun/ccny-orb-slam2/blob/master/src/Thirdparty/DBoW2/DBoW2/TemplatedVocabulary.h 替换你的TemplatedVocabulary
+
+4. 运行时遇到了段错误的问题，经过研究发现是gcc优化等级较高的原因，结果修改CMakeLists.txt将问题解决了。解决方案同时发布在了github上。
+
